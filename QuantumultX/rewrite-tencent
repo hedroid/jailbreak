@@ -1,5 +1,4 @@
-hostname = 3gimg.qq.com, 4gimg.map.qq.com, api2.helper.qq.com, bk.bingo.qq.com, bla.gtimg.com, btrace.qq.com, discuz.gtimg.cn, imgcache.qq.com, lives.l.qq.com, m.qianbao.qq.com, mi.gdt.qq.com, mmgr.gtimg.com, mtteve.beacon.qq.com, news.ssp.qq.com, otheve.beacon.qq.com, qt.qq.com, qzonestyle.gtimg.cn, r.inews.qq.com, sports3.gtimg.com, ssl.kohsocialapp.qq.com, static.gameplus.qq.com, us.l.qq.com, vv.video.qq.com, y.gtimg.cn, y.gtimg.cn,splashqqlive.gtimg.com, *.beacon.qq.com, *.gdt.qq.com, *.l.qq.com, *.qq.com,
-
+hostname = 3gimg.qq.com, 4gimg.map.qq.com, api2.helper.qq.com, bk.bingo.qq.com, bla.gtimg.com, btrace.qq.com, discuz.gtimg.cn, imgcache.qq.com, lives.l.qq.com, m.qianbao.qq.com, mi.gdt.qq.com, mmgr.gtimg.com, mtteve.beacon.qq.com, news.ssp.qq.com, otheve.beacon.qq.com, qt.qq.com, qzonestyle.gtimg.cn, r.inews.qq.com, sports3.gtimg.com, ssl.kohsocialapp.qq.com, static.gameplus.qq.com, us.l.qq.com, vv.video.qq.com, y.gtimg.cn, y.gtimg.cn,splashqqlive.gtimg.com, *.beacon.qq.com, *.gdt.qq.com, *.l.qq.com, *.qq.com 
 
 # > QQ钱包
 # hostname = m.qianbao.qq.com
@@ -25,7 +24,6 @@ hostname = 3gimg.qq.com, 4gimg.map.qq.com, api2.helper.qq.com, bk.bingo.qq.com, 
 ^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ url reject
 ^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind url reject-dict
 ^https?:\/\/vv\.video\.qq\.com\/getvinfo url request-body &sppreviewtype=\d(.*)&spsrt=\d request-body &sppreviewtype=0$1&spsrt=0
-
 
 # > 腾讯游戏社区
 # hostname = static.gameplus.qq.com
