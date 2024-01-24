@@ -5,7 +5,7 @@
 # "reject-dict"   策略返回 HTTP 状态码 200,同时附带一个空的 JSON 对象
 # "reject-array"  策略返回 HTTP 状态码 200,同时附带一个空的 JSON 数组
 #############################################
-hostname = -i.vip.iqiyi.com, *.iqiyi.com, acs.youku.com, push.m.youku.com, un-acs.youku.com, us.l.qq.com, y.gtimg.cn
+hostname = -i.vip.iqiyi.com, *.iqiyi.com, acs.youku.com, push.m.youku.com, un-acs.youku.com
 
 # > 优酷
 # hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
@@ -57,12 +57,3 @@ hostname = -i.vip.iqiyi.com, *.iqiyi.com, acs.youku.com, push.m.youku.com, un-ac
 ^https:\/\/search\.video\.iqiyi\.com\/q\? url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js
 # 开屏广告,播放广告
 ^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\? url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js
-
-# > QQ音乐
-# hostname = us.l.qq.com, y.gtimg.cn
-^https:\/\/us\.l\.qq\.com\/exapp url reject
-^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/ url reject
-^https?:\/\/.+?\/music\/common\/upload\/t_splash_info\/ url reject
-^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg url reject-img
-^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads url reject-img
-^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/music\/common\/upload\/t_splash_info\/ url reject
