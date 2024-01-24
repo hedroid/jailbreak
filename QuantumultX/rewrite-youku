@@ -5,7 +5,7 @@
 # "reject-dict"   策略返回 HTTP 状态码 200,同时附带一个空的 JSON 对象
 # "reject-array"  策略返回 HTTP 状态码 200,同时附带一个空的 JSON 数组
 #############################################
-hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
+hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com, audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn, us.l.qq.com, y.gtimg.cn
 
 # > 优酷
 # 播放详情页,首页信息流,顶部tab,我的页面,评论区
@@ -22,3 +22,24 @@ hostname = acs.youku.com, push.m.youku.com, un-acs.youku.com
 ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js
 # 开屏广告
 ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js
+
+# > 酷我音乐
+# hostname = audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn
+# 广告
+^http:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime url reject-dict
+^http:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/kuwo.js
+# 会员
+^http:\/\/audiobookpay\.kuwo\.cn\/a\.p url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/kuwo.js
+^http:\/\/musicpay\.kuwo\.cn\/music\.pay url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/kuwo.js
+^http:\/\/vip1\.kuwo\.cn\/vip\/(enc\/user\/vip\?op=ui|v2\/theme\?op=gd) url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/kuwo.js
+^https:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip\?op=ui url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/kuwo.js
+
+# > QQ音乐
+# hostname = us.l.qq.com, y.gtimg.cn
+^https:\/\/us\.l\.qq\.com\/exapp url reject
+^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/t_splash_info\/ url reject
+^https?:\/\/.+?\/music\/common\/upload\/t_splash_info\/ url reject
+^https?:\/\/y\.gtimg\.cn\/music\/common\/\/upload\/kg_ad/.*?\d{4}\.jpg url reject-img
+^https?:\/\/y\.gtimg\.cn\/music\/common\/upload\/targeted_ads url reject-img
+^https?:\/\/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\/music\/common\/upload\/t_splash_info\/ url reject
+
