@@ -1,3 +1,4 @@
+hostname = m.163.com, 59.111.*, 112.13.119.52, 117.147.199.59, interface*.music.163.com, httpdns.n.netease.com, *.163jiasu.com, ipv4.music.163.com
 # > 网易新闻
 # hostname = 
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ url reject-200
