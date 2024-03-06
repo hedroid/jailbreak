@@ -14,6 +14,6 @@ hostname = app.yinxiang.com
 */
 var baby = JSON.parse($response.body);
 baby.userProfile.nickname = "hedroid";
-// baby.userProfile.avatarUrl = "https://raw.githubusercontent.com/Yu9191/-/main/A559C8EF-B4C6-4A94-8488-3D0BF36A6673.jpeg";
+baby.userProfile.avatarUrl = "https://tupian.qqw21.com/article/UploadPic/2019-10/201910162131618924.jpg";
 baby.userProfile.email = "hedroid@126.com";
 $done({body : JSON.stringify(baby)});
