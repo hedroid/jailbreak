@@ -3,7 +3,7 @@
 熊掌记：https://apps.apple.com/app/id1016366447
 
 [rewrite_local]
-^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/Guding88/Script/main/xiongzhangji.js
+^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/hedroid/jailbreak/main/QuantumultX/scripts/xiongzhangji.js
 
 [MITM]
 hostname = buy.itunes.apple.com
