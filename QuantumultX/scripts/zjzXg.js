@@ -32,7 +32,7 @@ var objc = JSON.parse($response.body);
         "autoPay" : "YES"
       }
     ],
-    "headImg" : "https://tupian.qqw21.com/article/UploadPic/2019-10/201910162131618924.jpg",
+    "headImg" : "https://bpic.51yuansu.com/pic3/cover/03/47/83/5badd675b7867_610.jpg",
     "type" : "VIP",
     "inviteCode" : "dVWdrPKt",
     "vipExpireTime" : "2099-12-31 23:59:59"
