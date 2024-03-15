@@ -33,7 +33,7 @@ const iap_2 = function (receipt_data) {
     return [(receipt_data)];
 }
 
-const iap_3 = function (product_id) {
+const iap_3 = function (receipt_data) {
     return [];
 }
 
@@ -52,7 +52,7 @@ const iap_4 = function (receipt_data) {
 
 //expire:0 永久；1 订阅
 const apps = {
-    'com.zhk.forworld': {iap: iap_3, expire: 0, id: "", latest: "https://github.com/hedroid"},
+    'com.zhk.forworld': {iap: iap_3, expire: 0, version: "1", id: "", latest: "https://github.com/hedroid"},
     'MWeb%20iOS': {iap: iap_2, expire: 1, version: "968", id: "10001", latest: "https://github.com/hedroid"},
 }
 
