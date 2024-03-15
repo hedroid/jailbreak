@@ -39,48 +39,69 @@ const iap_3 = function (receipt_data) {
 }
 
 const iap_4 = function (receipt_data) {
-    let product_id = this.id
     let product_id0 = this.id0
-    return [Object.assign({}, receipt_data, {"product_id": (product_id0)}), Object.assign({}, receipt_data, {
-        "expires_date": "2099-09-09 09:09:09 Etc/GMT",
-        "expires_date_pst": "2099-09-09 06:06:06 America/Los_Angeles",
-        "is_in_intro_offer_period": "false",
-        "web_order_line_item_id": "490000123456789",
-        "expires_date_ms": "4092599349000",
-        "product_id": (product_id)
-    })];
+    let product_id = this.id
+    return [
+        Object.assign({}, receipt_data, {"product_id": (product_id0)}),
+        Object.assign({}, receipt_data, {
+            "expires_date": "2099-09-09 09:09:09 Etc/GMT",
+            "expires_date_pst": "2099-09-09 06:06:06 America/Los_Angeles",
+            "is_in_intro_offer_period": "false",
+            "web_order_line_item_id": "490000123456789",
+            "expires_date_ms": "4092599349000",
+            "product_id": (product_id)
+        })];
 }
 
 //expire:0 永久；1 订阅
 const apps = {
-    'com.zhk.forworld': {iap: iap_3, expire: 0, version: "1", id: "", latest: "https://github.com/hedroid"},
+    'com.zhk.forworld': {
+        iap: iap_3,
+        expire: 0,
+        version: "1",
+        id: "",
+        latest: "https://github.com/hedroid",
+        des: "我的书橱 漫画阅读器"
+    },
     'com.coderforart.iOS.MWeb': {
         iap: iap_2,
         expire: 1,
         version: "968",
         id: "10001",
-        latest: "https://github.com/hedroid"
+        latest: "https://github.com/hedroid",
+        des: "MWeb markdown文档编辑"
     },
     'com.icandiapps.nightsky': {
         iap: iap_1,
         expire: 1,
         version: "12.0.2.1",
         id: "com.icandiapps.ns4.annual",
-        latest: "https://github.com/hedroid"
+        latest: "https://github.com/hedroid",
+        des: "星空"
     },
     'net.domzilla.pdfpro': {
         iap: iap_1,
         expire: 1,
         version: "1",
         id: "net.domzilla.pdfpro.iap.premium.annual",
-        latest: "https://github.com/hedroid"
+        latest: "https://github.com/hedroid",
+        des: "pdfpro"
     },
     'com.shengzhou.fileartifact': {
         iap: iap_1,
         expire: 1,
         version: "2",
         id: "com.shengzhou.fileartifact.month",
-        latest: "https://github.com/hedroid"
+        latest: "https://github.com/hedroid",
+        des: "文晓生 小说阅读管理"
+    },
+    'FuYuan.inkDiary': {
+        iap: iap_1,
+        expire: 1,
+        version: "273",
+        id: "FuYuan.inkDiary.YearB.Pro",
+        latest: "https://github.com/hedroid",
+        des: "色采 https://is.gd/G3Dw6r"
     },
 }
 
