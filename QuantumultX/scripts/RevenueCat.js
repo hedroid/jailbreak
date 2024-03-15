@@ -26,7 +26,8 @@ const bundle_id = headers['X-Client-Bundle-ID'] || headers['x-client-bundle-id']
 
 
 const apps = {
-    'Noto%20%E7%AC%94%E8%AE%B0': {id: 'com.lkzhao.editor.pro.ios.monthly', name: 'pro', expire: 1},  //Noto-笔记
+    'Noto%20%E7%AC%94%E8%AE%B0': {id: 'com.lkzhao.editor.pro.ios.monthly', name: 'pro', expire: 1},
+    'Reader': {id: 'reader.lifetime.pro', name: 'pro'}, //PureLibro
 }
 
 if (typeof $response == "undefined") {
