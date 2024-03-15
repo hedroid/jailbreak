@@ -30,6 +30,7 @@ const apps = {
     'Reader': {id: 'reader.lifetime.pro', name: 'pro', expire: 1}, //PureLibro
     'One4WallSwiftUI': {id: 'lifetime_key', name: 'lifetime', expire: 0}, //One4Wall
     'PDF%20Viewer': {id: 'com.pspdfkit.viewer.sub.pro.yearly', name: 'sub.pro', expire: 1},  //PDF Viewerr
+    'Paper': {id: 'com.fiftythree.paper.credit',name: 'pro',  expire: 0},  //Paper素描
 }
 
 if (typeof $response == "undefined") {
