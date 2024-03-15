@@ -29,6 +29,7 @@ const apps = {
     'Noto%20%E7%AC%94%E8%AE%B0': {id: 'com.lkzhao.editor.pro.ios.monthly', name: 'pro', expire: 1},
     'Reader': {id: 'reader.lifetime.pro', name: 'pro', expire: 1}, //PureLibro
     'One4WallSwiftUI': {id: 'lifetime_key', name: 'lifetime', expire: 0}, //One4Wall
+    'PDF%20Viewer': {id: 'com.pspdfkit.viewer.sub.pro.yearly', name: 'sub.pro', expire: 1},  //PDF Viewerr
 }
 
 if (typeof $response == "undefined") {
