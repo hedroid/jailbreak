@@ -48,11 +48,11 @@ if (typeof $response == "undefined") {
                 body.subscriber.entitlements[name0] = Object.assign({}, data, {product_identifier: id0});
             }
             const subData = Object.assign({}, data, {
-                "author": "github.com",
+                "Author": "github.com",
                 "warning": "仅供学习，禁止转载或售卖",
                 "original_purchase_date": "2023-09-09T09:09:09Z",
                 "store_transaction_id": "4900066666666666",
-                "period_type": "trial",
+                "period_type": "normal",
                 "store": "app_store",
                 "ownership_type": "PURCHASED"
             });
