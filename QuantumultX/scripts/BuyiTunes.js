@@ -20,6 +20,7 @@ const body = JSON.parse($response.body);
 const ua = $request.headers['User-Agent'] || $request.headers['user-agent'];
 const bundle_id = body.receipt["bundle_id"] || body.receipt["Bundle_Id"];
 
+//识别数据，处理到期时间或永久，多重购买
 const iap_1 = function (receipt_data) {
     return [Object.assign({}, receipt_data, {
         "expires_date": "2099-09-09 09:09:09 Etc/GMT",
@@ -53,7 +54,20 @@ const iap_4 = function (receipt_data) {
 //expire:0 永久；1 订阅
 const apps = {
     'com.zhk.forworld': {iap: iap_3, expire: 0, version: "1", id: "", latest: "https://github.com/hedroid"},
-    'MWeb%20iOS': {iap: iap_2, expire: 1, version: "968", id: "10001", latest: "https://github.com/hedroid"},
+    'com.coderforart.iOS.MWeb': {
+        iap: iap_2,
+        expire: 1,
+        version: "968",
+        id: "10001",
+        latest: "https://github.com/hedroid"
+    },
+    'com.icandiapps.nightsky': {
+        iap: iap_1,
+        expire: 1,
+        version: "12.0.2.1",
+        id: "com.icandiapps.ns4.annual",
+        latest: "https://github.com/hedroid"
+    },
 }
 
 for (const i in apps) {
@@ -101,14 +115,13 @@ for (const i in apps) {
             "original_purchase_date_ms": "1694273430000",
             "receipt_creation_date": "2023-09-09 16:06:26 Etc/GMT",
             "receipt_creation_date_pst": "2023-09-09 06:06:26 America/Los_Angeles",
-            "receipt_creation_date_ms": "1694273634000",
-            "original_application_version": apps[i].version
+            "receipt_creation_date_ms": "1694273634000"
         };
-        body["receipt"] = Object.assign({}, body["receipt"], common_data);
         //判断是否需要加入版本号(可有可无)
-        if (apps[i] && apps[i].version && apps[i].version.trim() !== '') {
-            body["receipt"]["original_application_version"] = apps[i].version;
+        if (apps[i].version && apps[i].version.trim() !== '') {
+            common_data["original_application_version"] = apps[i].version;
         }
+        body["receipt"] = Object.assign({}, body["receipt"], common_data);
         break;
     }
 }
