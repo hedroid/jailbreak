@@ -27,7 +27,7 @@ const bundle_id = headers['X-Client-Bundle-ID'] || headers['x-client-bundle-id']
 
 const apps = {
     'Noto%20%E7%AC%94%E8%AE%B0': {id: 'com.lkzhao.editor.pro.ios.monthly', name: 'pro', expire: 1},
-    'Reader': {id: 'reader.lifetime.pro', name: 'pro'}, //PureLibro
+    'Reader': {id: 'reader.lifetime.pro', name: 'pro', expire: 1}, //PureLibro
 }
 
 if (typeof $response == "undefined") {
@@ -40,16 +40,17 @@ if (typeof $response == "undefined") {
     for (const i in apps) {
         if (new RegExp(`^${i}`, `i`).test(ua) || new RegExp(`^${i}`, `i`).test(bundle_id)) {
             let id = apps[i].id, name = apps[i].name, id0 = apps[i].id0, name0 = apps[i].name0;
-            let data = {"purchase_date": "2023-09-09T09:09:09Z", "expires_date": "2099-09-09T09:09:09Z"};
+            let data = {"purchase_date": "2023-09-09T09:09:09Z"};
             if (apps[i].expire === 1) {
                 Object.assign(data, {"expires_date": "2099-09-09T09:09:09Z"})
             }
+
             body.subscriber.entitlements[name] = Object.assign({}, data, {product_identifier: id});
             if (typeof name0 !== 'undefined' && name0 !== null) {
                 body.subscriber.entitlements[name0] = Object.assign({}, data, {product_identifier: id0});
             }
             const subData = Object.assign({}, data, {
-                "Author": "github.com",
+                "author": "github.com",
                 "warning": "仅供学习，禁止转载或售卖",
                 "original_purchase_date": "2023-09-09T09:09:09Z",
                 "store_transaction_id": "4900066666666666",
