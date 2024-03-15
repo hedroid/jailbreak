@@ -55,53 +55,34 @@ const iap_4 = function (receipt_data) {
 
 //expire:0 永久；1 订阅
 const apps = {
-    'com.zhk.forworld': {
-        iap: iap_3,
-        expire: 0,
-        version: "1",
-        id: "",
-        latest: "https://github.com/hedroid",
-        des: "我的书橱 漫画阅读器"
-    },
+    'com.zhk.forworld': {iap: iap_3, expire: 0, version: "1", id: "", latest: "https://github.com/hedroid"},
     'com.coderforart.iOS.MWeb': {
         iap: iap_2,
         expire: 1,
         version: "968",
         id: "10001",
-        latest: "https://github.com/hedroid",
-        des: "MWeb markdown文档编辑"
+        latest: "https://github.com/hedroid"
     },
     'com.icandiapps.nightsky': {
         iap: iap_1,
         expire: 1,
         version: "12.0.2.1",
         id: "com.icandiapps.ns4.annual",
-        latest: "https://github.com/hedroid",
-        des: "星空"
+        latest: "https://github.com/hedroid"
     },
     'net.domzilla.pdfpro': {
         iap: iap_1,
         expire: 1,
         version: "1",
         id: "net.domzilla.pdfpro.iap.premium.annual",
-        latest: "https://github.com/hedroid",
-        des: "pdfpro"
+        latest: "https://github.com/hedroid"
     },
     'com.shengzhou.fileartifact': {
         iap: iap_1,
         expire: 1,
         version: "2",
         id: "com.shengzhou.fileartifact.month",
-        latest: "https://github.com/hedroid",
-        des: "文晓生 小说阅读管理"
-    },
-    'FuYuan.inkDiary': {
-        iap: iap_1,
-        expire: 1,
-        version: "273",
-        id: "FuYuan.inkDiary.YearB.Pro",
-        latest: "https://github.com/hedroid",
-        des: "色采 https://is.gd/G3Dw6r"
+        latest: "https://github.com/hedroid"
     },
 }
 
