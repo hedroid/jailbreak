@@ -84,6 +84,14 @@ const apps = {
         id: "com.shengzhou.fileartifact.month",
         latest: "https://github.com/hedroid"
     },
+    //色采 https://is.gd/G3Dw6r
+    'FuYuan.inkDiary': {
+        iap: iap_1,
+        expire: 1,
+        version: "273",
+        id: "FuYuan.inkDiary.YearB.Pro",
+        latest: "https://github.com/hedroid",
+    },
 }
 
 for (const i in apps) {
