@@ -17,3 +17,6 @@ hostname = api.m.jd.com, dns.jd.com, m.360buyimg.com, api.m.jd.com, bdsp-x.jd.co
 ^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/(new)?na\/m\/getLoadingPicture url reject
 ^https?:\/\/appconf\.mail\.163\.com\/mmad\/ url reject
 ^https?:\/\/support\.you\.163\.com\/xhr\/boot\/getBootMedia\.json url reject
+
+# > 京东比价
+#^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) url script-response-body https://service.2ti.st/QuanX/Script/jd_tb_price/main.js
