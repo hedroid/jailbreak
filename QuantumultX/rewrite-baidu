@@ -51,23 +51,16 @@ hostname = afd.baidu.com, api*.tuisong.baidu.com, appwk.baidu.com, baichuan.baid
 
 # > 百度网盘
 # hostname = pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn
-^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adx url reject
-^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad url reject
-^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list url reject
-^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry url reject
-^https?:\/\/pan\.baidu\.com\/pmall\/order\/privilege\/info url reject
-^https?:\/\/pan\.baidu\.com\/rest\/.+\/pcs\/adx url reject
-^https?:\/\/pan\.baidu\.com\/api\/useractivity\/activity url reject
-^https?:\/\/pan\.baidu\.com\/act\/.+\/bchannel\/list url reject
-^https?:\/\/pan\.baidu\.com\/api\/certuser\/get url reject
-^https?:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?vip url reject
-^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/js\/.+\.js url reject
-^https?:\/\/ndstatic\.cdn\.bcebos\.com\/activity\/welfare\/index\.html url reject
-^https?:\/\/staticsns\.cdn\.bcebos\.com\/amis\/.+/banner.png url reject
-^https?:\/\/issuecdn\.baidupcs\.com\/issue\/netdisk\/guanggao url reject
-^https?:\/\/update.pan.baidu.com\/statistics url reject
-^https?:\/\/fc-video\.cdn\.bcebos\.com url reject
-^https?:\/\/rp\.hpplay\.cn\/logouts url reject
+# > 百度网盘_开屏广告@ddgksf2013
+^https?:\/\/pan\.baidu\.com\/api\/getsyscfg url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
+# > 百度网盘_设置信息流@ddgksf2013
+^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list url reject-200
+# > 百度网盘_通用广告@ddgksf2013
+^https?:\/\/pan\.baidu\.com\/rest\/.*\/pcs\/ad url reject-200
+# > 百度网盘_活动推广@ddgksf2013
+^https?:\/\/pan\.baidu\.com\/act\/api\/activityentry url reject-200
+# > 百度网盘_会员权益@ddgksf2013
+^https:\/\/pan\.baidu\.com\/rest\/.*\/membership\/user\?app_id url script-response-body https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.vip.js
 
 # > 百度贴吧
 # hostname = tiebac.baidu.com
