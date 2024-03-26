@@ -7,7 +7,6 @@ hostname = judouapp.com
 *
 *
 */
-
 var body = $response.body; 
 let obj = JSON.parse($response.body);
 obj.is_member = true ;
