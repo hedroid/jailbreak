@@ -1,6 +1,6 @@
 [rewrite_local]
 # > 句读
-^https?:\/\/judouapp.com\/api\/v2\/mine\/profile url script-response-body https://raw.githubusercontent.com/hedroid/jailbreak/main/QuantumultX/scripts/judu.js
+^https?:\/\/judouapp.com\/api\/v2\/mine\/profile url script-response-body https://raw.githubusercontent.com/hedroid/jailbreak/main/QuantumultX/scripts/judou.js
 
 [mitm] 
 hostname = judouapp.com
