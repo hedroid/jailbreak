@@ -70,13 +70,6 @@ const apps = {
         id: "com.icandiapps.ns4.annual",
         latest: "https://github.com/hedroid"
     },
-    'net.domzilla.pdfpro': {
-        iap: iap_1,
-        expire: 1,
-        version: "1",
-        id: "net.domzilla.pdfpro.iap.premium.annual",
-        latest: "https://github.com/hedroid"
-    },
     'com.shengzhou.fileartifact': {
         iap: iap_1,
         expire: 1,
