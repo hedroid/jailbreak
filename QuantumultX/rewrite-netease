@@ -1,22 +1,46 @@
-hostname = m.163.com, 59.111.*, 112.13.119.52, 117.147.199.59, interface*.music.163.com, httpdns.n.netease.com, *.163jiasu.com, ipv4.music.163.com
+hostname = m.163.com, 59.111.*, 112.13.119.52, 117.147.199.59, interface*.music.163.com, httpdns.n.netease.com, *.163jiasu.com, ipv4.music.163.com, dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
 # > 网易新闻
 # hostname = 
 ^https?:\/\/c\.m\.163\.com\/nc\/gl\/ url reject-200
 
 # > 网易云音乐
-# hostname = 59.111.*, 112.13.119.52, 117.147.199.59, interface*.music.163.com, httpdns.n.netease.com, *.163jiasu.com, ipv4.music.163.com
-^https?:\/\/httpdns.n\.netease\.com url reject
-^https?:\/\/httpdns\.music\.163\.com url reject
-^https?:\/\/iadmusicmatvideo\.music\.126\.net url reject
-^https?:\/\/interface3?\.music\.163\.com\/eapi\/(community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) url reject-dict
-# (评论区｜评论右上角热评馆｜播放页评论)｜回复
-^https?:\/\/interface3?\.music\.163.com\/eapi\/(comment\/(feed\/inserted|hotcomment\/collect|tips\/v2\/get)|v\d\/content\/exposure\/comment\/banner) url reject-dict
-# 播放页live或直播｜(首页免或vip图标｜小提示)
-^https?:\/\/interface3?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/(strategy|resource)|scene\/show)) url reject-dict
-# 黑胶弹窗｜会员试用
-^https?:\/\/interface3?\.music\.163.com\/eapi\/(vipcenter\/tspopup\/get|vipauth\/app\/auth|music-vip-membership\/client\/vip\/info|zone\/songplay\/entry\/get) url reject-dict
-# 搜索页热搜卡片｜猜你喜欢｜我的应用下方提醒
-^https?:\/\/interface3?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|(resource-exposure\/|middle\/clientcfg\/config)|activity\/bonus\/playpage\/time\/query) url reject-dict
-# 侧边栏
-^https?:\/\/interface3?\.music\.163\.com\/eapi\/(side-bar\/mini-program\/music-service\/account|delivery\/batch-deliver) url reject-dict
-^https?:\/\/(ipv4|interface3?)\.music\.163.com\/eapi\/ad url reject-dict
+# hostname = interface.music.163.com, interface?.music.163.com, ipv4.music.163.com
+https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad url reject-dict
+https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get) url reject-dict
+https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) url reject-dict
+https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query) url reject-dict
+https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) url reject-dict
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get) url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)) url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get url script-response-body https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
+
+# > 网易有道词典
+# hostname = dict.youdao.com, api-overmind.youdao.com, cdke.youdao.com, dictvip-business.youdao.com, dsp-impr2.youdao.com, impservice.dictapp.youdao.com, oral.youdao.com, oimage*.ydstatic.com
+# 首页净化，学习Tab界面净化，首页听读训练净化
+^https?:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile) url script-response-body https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js
+# 翻译广告
+^https?:\/\/dict\.youdao\.com\/course\/tab\/translateTab url reject-dict
+# 听读训练
+#^https?:\/\/dict\.youdao\.com\/homepage\/tile url reject-dict
+# 首次查词弹窗
+^https?:\/\/api-overmind\.youdao\.com\/openapi\/get\/luna\/dict\/dict-mobile\/prod\/dictCommonConfig url reject-dict
+# 首页弹窗
+^https?:\/\/cdke\.youdao\.com\/course3\/recommend\/dict\/startup url reject-dict
+# 搜索预想
+^https?:\/\/dict\.youdao\.com\/commonsearch url reject-dict
+# 会员优惠券弹窗
+^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo url reject-dict
+# 首页左上角福利中心
+^https?:\/\/dict\.youdao\.com\/dictusertask\/system url reject-dict
+# 会员界面横幅广告
+^https?:\/\/dictvip-business\.youdao\.com\/home\/ad url reject-dict
+# 其他
+^https?:\/\/oimage([a-z])([0-9])\.ydstatic\.com\/.+adpublish url reject
+^https?:\/\/oimage\w\d\.ydstatic\.com\/image\?.+?=adpublish url reject-img
+^https?:\/\/dsp-impr2\.youdao\.com\/adload url reject-200
+^https?:\/\/impservice\.dictapp\.youdao\.com\/imp\/request url reject-img
+^https?:\/\/oral\.youdao\.com\/oral\/adInfo url reject-img
