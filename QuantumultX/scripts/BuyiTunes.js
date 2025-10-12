@@ -78,14 +78,6 @@ const apps = {
         latest: "https://github.com/hedroid"
         // 文晓生，文件管理小说阅读神器
     },
-    'com.wizeyes.colorcapture': {
-        iap: iap_1,
-        expire: 1,
-        version: "273",
-        id: "FuYuan.inkDiary.YearB.Pro",
-        latest: "https://github.com/hedroid"
-        //色采 https://is.gd/G3Dw6r
-    },
     'com.dandelion.Routine': {
         iap: iap_2,
         expire: 1,
