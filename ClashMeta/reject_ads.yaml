@@ -1,0 +1,17 @@
+payload:
+  # > 脉脉
+  - DOMAIN-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\?
+  - DOMAIN-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\?
+  - DOMAIN-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\?
+  - DOMAIN-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)\?
+
+  # > 交管12123
+  - DOMAIN-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$
+  - DOMAIN-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery
+
+  # > 豆瓣
+  - DOMAIN-REGEX,^https?:\/\/api\.douban\.com\/v\d\/app_ads\/
+  - DOMAIN-REGEX,^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.*
+  - DOMAIN-REGEX,^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/
+  - DOMAIN-REGEX,^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner
+  - DOMAIN-REGEX,^https?:\/\/erebor\.douban\.com\/count\/\?ad=
