@@ -1,89 +1,100 @@
 payload:
 
-  # ========== Google Ads ==========
+  # ==========================================
+  # Google Ads（最全面，不误杀）
+  # ==========================================
   - DOMAIN-SUFFIX,googlesyndication.com
   - DOMAIN-SUFFIX,googleadservices.com
-  - DOMAIN-SUFFIX,googleads.g.doubleclick.net
   - DOMAIN-SUFFIX,doubleclick.net
+  - DOMAIN-SUFFIX,googleads.g.doubleclick.net
   - DOMAIN-SUFFIX,pagead2.googlesyndication.com
   - DOMAIN-SUFFIX,adservice.google.com
   - DOMAIN-SUFFIX,adservice.google.com.hk
-  - DOMAIN-SUFFIX,adservice.google.co.jp
   - DOMAIN-SUFFIX,adservice.google.de
-  - DOMAIN-SUFFIX,adservice.googleadapis.com
   - DOMAIN-SUFFIX,admob.com
-  - DOMAIN-SUFFIX,adnxs.com
   - DOMAIN-SUFFIX,ads.youtube.com
-  - DOMAIN-SUFFIX,ads.google.com
-  - DOMAIN-SUFFIX,analytics.google.com
   - DOMAIN-SUFFIX,googletagmanager.com
   - DOMAIN-SUFFIX,googletagservices.com
   - DOMAIN-REGEX,.*doubleclick\.net
   - DOMAIN-REGEX,.*googlesyndication\.com
   - URL-REGEX,^https?:\/\/.*doubleclick\.net
 
-  # ========== Twitter (X) Ads / Tracking ==========
-  - DOMAIN-SUFFIX,twitteranalytics.com
+  # ==========================================
+  # Twitter / X 广告 & 追踪
+  # ==========================================
   - DOMAIN-SUFFIX,ads-twitter.com
   - DOMAIN-SUFFIX,ads-api.twitter.com
-  - DOMAIN-SUFFIX,p.twitter.com
+  - DOMAIN-SUFFIX,twitteranalytics.com
   - DOMAIN-SUFFIX,scribe.twitter.com
   - URL-REGEX,^https?:\/\/ads-api\.twitter\.com
   - URL-REGEX,^https?:\/\/.*twitter.*\/i\/ads
 
-  # ========== Telegram Tracking ==========
+  # ==========================================
+  # Telegram Metrics
+  # ==========================================
   - DOMAIN-SUFFIX,metrics.t.me
   - DOMAIN-SUFFIX,telemetry.telegram.org
   - DOMAIN-SUFFIX,stats.tlgrm.app
 
-  # ========== Instagram / Meta / Facebook 广告和追踪 ==========
-  - DOMAIN-SUFFIX,graph.facebook.com
-  - DOMAIN-SUFFIX,graph.instagram.com
+  # ==========================================
+  # Meta / Instagram / Facebook 广告
+  # ==========================================
   - DOMAIN-SUFFIX,ads.facebook.com
   - DOMAIN-SUFFIX,ads.instagram.com
-  - DOMAIN-SUFFIX,ad.doubleclick.net
-  - DOMAIN-SUFFIX,connect.facebook.net
   - DOMAIN-SUFFIX,fbcdn-ads.com
-  - DOMAIN-SUFFIX,fbads.com
   - DOMAIN-SUFFIX,atdmt.com
+  - DOMAIN-SUFFIX,connect.facebook.net
+  - DOMAIN-SUFFIX,facebookads.com
+  - DOMAIN-SUFFIX,ad.doubleclick.net
   - URL-REGEX,^https?:\/\/graph\.facebook\.com\/.*ads
   - URL-REGEX,^https?:\/\/ads\.instagram\.com
 
-  # ========== 国内常用 APP 广告联盟 ==========
-
-  ## 🍊 广告联盟通用
-  - DOMAIN-SUFFIX,ads.api.vungle.com
-  - DOMAIN-SUFFIX,unityads.unity3d.com
+  # ==========================================
+  # 国内常用广告联盟
+  # ==========================================
   - DOMAIN-SUFFIX,appsflyer.com
   - DOMAIN-SUFFIX,adjust.com
   - DOMAIN-SUFFIX,bugly.qq.com
   - DOMAIN-SUFFIX,tracking.miui.com
   - DOMAIN-SUFFIX,tracking.intl.miui.com
   - DOMAIN-SUFFIX,api-mifeng.mipay.com
+  - DOMAIN-SUFFIX,adsmogo.com
+  - DOMAIN-SUFFIX,adsmogo.org
+  - DOMAIN-SUFFIX,ironsrc.com
 
-  ## 📱 知乎
+  # ==========================================
+  # 知乎广告
+  # ==========================================
   - DOMAIN-SUFFIX,adx.zhi.hu
-  - DOMAIN-SUFFIX,ad-brix.com
-  - URL-REGEX,^https?:\/\/zhihu\.com\/api\/v\d\/ad
+  - URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d\/ad
 
-  ## 📕 小红书
+  # ==========================================
+  # 小红书广告
+  # ==========================================
   - DOMAIN-SUFFIX,ads.xiaohongshu.com
   - DOMAIN-SUFFIX,track.xiaohongshu.com
 
-  ## 🐦 微博
+  # ==========================================
+  # 微博广告
+  # ==========================================
   - DOMAIN-SUFFIX,ad*.weibo.com
-  - DOMAIN-SUFFIX,u1.sinaimg.cn
   - URL-REGEX,^https?:\/\/api\.weibo\.cn\/2\/ad
 
-  ## 📺 哔哩哔哩 Bilibili
+  # ==========================================
+  # 哔哩哔哩广告
+  # ==========================================
   - DOMAIN-SUFFIX,cm.bilibili.com
   - DOMAIN-SUFFIX,ads.biligame.com
   - URL-REGEX,^https?:\/\/api\.bilibili\.com\/x\/v2\/dm\/ad
 
-  ## 🟩 酷安
+  # ==========================================
+  # 酷安广告
+  # ==========================================
   - DOMAIN-SUFFIX,ads.coolapk.com
 
-  # ========== Douban ==========
+  # ==========================================
+  # Douban（豆瓣）
+  # ==========================================
   - DOMAIN-SUFFIX,adapi.douban.com
   - DOMAIN-SUFFIX,erebor.douban.com
   - DOMAIN-SUFFIX,apm.douban.com
@@ -96,15 +107,19 @@ payload:
   - URL-REGEX,^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner
   - URL-REGEX,^https?:\/\/erebor\.douban\.com\/count\/\?ad=
 
-  # ========== Maimai（脉脉） ==========
-  - DOMAIN-SUFFIX,adpub.maimai.cn
-  - DOMAIN-SUFFIX,open.taou.com
+  # ==========================================
+  # Maimai（脉脉广告 API —— 不误杀）
+  # ==========================================
+  # ⚠ 注意：不能屏蔽 open.taou.com 的域名本体，否则同事圈/热榜打不开
+  # 以下仅拦截广告 API 接口
   - URL-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow
   - URL-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift
   - URL-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards
   - URL-REGEX,^https:\/\/(h3\.)?open\.taou\.com\/maimai\/(feed|gossip)\/v\d\/(focus_feed|gossip_detail_comment|feed_detail_comment?)
 
-  # ========== 交管 12123 ==========
+  # ==========================================
+  # 交管 12123
+  # ==========================================
   - DOMAIN-SUFFIX,gab.122.gov.cn
   - URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$
   - URL-REGEX,^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery
