@@ -39,8 +39,12 @@ if (typeof $response == "undefined") {
 } else if (body && body.subscriber) {
     body.subscriber.subscriptions = body.subscriber.subscriptions || {};
     body.subscriber.entitlements = body.subscriber.entitlements || {};
+    console.log(`RevenueCat请求 UA=${ua} bundle=${bundle_id} path=${$request.url.split('/v1/')[1] || $request.url}`);
+    let matched = null;
     for (const i in apps) {
         if (new RegExp(`^${i}`, `i`).test(ua) || new RegExp(`^${i}`, `i`).test(bundle_id)) {
+            matched = i;
+            console.log(`命中解锁条目: ${i}`);
             let id = apps[i].id, name = apps[i].name, id0 = apps[i].id0, name0 = apps[i].name0;
             let data = {"purchase_date": "2023-09-09T09:09:09Z"};
             if (apps[i].expire === 1) {
@@ -67,6 +71,9 @@ if (typeof $response == "undefined") {
             response.body = JSON.stringify(body);
             break;
         }
+    }
+    if (matched === null) {
+        console.log('未命中任何解锁条目（把上面的 UA/bundle 发给维护者即可加条目）');
     }
 }
 
