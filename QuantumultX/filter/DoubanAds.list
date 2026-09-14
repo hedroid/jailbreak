@@ -1,0 +1,25 @@
+# NAME: DoubanAds
+# DESC: 豆瓣开屏/信息流广告分流拦截（SNI 层 REJECT，不受证书固定影响）
+# DESC: 豆瓣 App 的 frodo.douban.com 有证书固定，MITM 不可用，重写层规则对它无效，必须在分流层整域拒绝
+# REF: https://cn.v2ex.com/t/970893 / fmz200 wool_scripts / NobyDa AdRule
+
+# > 豆瓣自有广告/上报域
+# 若豆瓣网页或 App 加载异常，删除 erebor 这行即可
+DOMAIN-SUFFIX,erebor.douban.com,REJECT
+DOMAIN-SUFFIX,ad.doubanio.com,REJECT
+DOMAIN,qnmob3.doubanio.com,REJECT
+
+# > 第三方广告供应商（优量汇/穿山甲/阿里tanx/京东DSP/抖音/火山）
+DOMAIN-SUFFIX,gdt.qq.com,REJECT
+DOMAIN,qzs.gdtimg.com,REJECT
+DOMAIN,pgdt.ugdtimg.com,REJECT
+DOMAIN,sdk.e.qq.com,REJECT
+DOMAIN,et.tanx.com,REJECT
+DOMAIN,sdk-config.tanx.com,REJECT
+DOMAIN,dsp-x.jd.com,REJECT
+DOMAIN,xlog.jd.com,REJECT
+DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN,webcast-open.douyin.com,REJECT
+DOMAIN,mssdk.volces.com,REJECT
