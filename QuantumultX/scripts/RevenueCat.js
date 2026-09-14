@@ -28,6 +28,8 @@ const bundle_id = headers['X-Client-Bundle-ID'] || headers['x-client-bundle-id']
 const apps = {
     'Noto%20%E7%AC%94%E8%AE%B0': {id: 'com.lkzhao.editor.pro.ios.monthly', name: 'pro', expire: 1},
     'PDF%20Viewer': {id: 'com.pspdfkit.viewer.sub.pro.yearly', name: 'sub.pro', expire: 1},  //PDF Viewerr
+    'com.hugo.jizhi': {id: 'jizhi_vip', name: 'jizhi_vip', expire: 1},  //几枝
+    'jizhi': {id: 'jizhi_vip', name: 'jizhi_vip', expire: 1},  //几枝（UA 前缀匹配）
 }
 
 if (typeof $response == "undefined") {
