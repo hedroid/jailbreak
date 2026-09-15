@@ -19,6 +19,7 @@
 const body = JSON.parse($response.body);
 const ua = $request.headers['User-Agent'] || $request.headers['user-agent'];
 const bundle_id = body.receipt["bundle_id"] || body.receipt["Bundle_Id"];
+console.log(`BuyiTunes请求 UA=${ua} bundle=${bundle_id}`);
 
 //识别数据，处理到期时间或永久，多重购买
 const iap_1 = function (receipt_data) {
@@ -140,6 +141,7 @@ for (const i in apps) {
             common_data["original_application_version"] = apps[i].version;
         }
         body["receipt"] = Object.assign({}, body["receipt"], common_data);
+        console.log(`BuyiTunes命中解锁条目: ${i}`);
         break;
     }
 }
