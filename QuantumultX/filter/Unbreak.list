@@ -1,4 +1,4 @@
-# > hedroid 自用分流合集：广告规则防误杀修正（原 Unbreak，上游 ddgksf2013 已停更，自维护）+ 基础网络分流
+# > 广告规则防误杀修正（上游 ddgksf2013/Filter 已停更，自维护）
 
 DOMAIN,app.adjust.com
 DOMAIN,app.appsflyer.com
@@ -13,7 +13,6 @@ DOMAIN,clientservices.googleapis.com
 DOMAIN,update.googleapis.com
 DOMAIN,dl.google.com
 DOMAIN,dl.l.google.com
-DOMAIN,update.googleapis.com
 DOMAIN,mtalk.google.com
 DOMAIN,alt1-mtalk.google.com
 DOMAIN,alt2-mtalk.google.com
@@ -34,19 +33,3 @@ DOMAIN-SUFFIX,stats.qiumibao.com
 DOMAIN-SUFFIX,umiwi.com
 host, ad.12306.cn, direct
 host, sdkapp.uve.weibo.com, direct
-
-# > 自用修正：防广告规则误杀
-host, ad.12306.cn, direct
-host, sdkapp.uve.weibo.com, direct
-
-# > 基础分流
-host-keyword, github, proxy
-
-# > local
-ip-cidr, 10.0.0.0/8, direct
-ip-cidr, 127.0.0.0/8, direct
-ip-cidr, 172.16.0.0/12, direct
-ip-cidr, 192.168.0.0/16, direct
-ip-cidr, 224.0.0.0/24, direct
-ip-cidr, 182.254.116.0/24, direct
-geoip, cn, direct
