@@ -79,7 +79,7 @@ const apps = {
         // 文晓生，文件管理小说阅读神器
     },
     'com.dandelion.Routine': {
-        iap: iap_2,
+        iap: iap_1,
         expire: 1,
         version: "364",
         id: "membership",
