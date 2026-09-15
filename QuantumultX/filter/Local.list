@@ -1,7 +1,5 @@
 # > 从配置 filter_local 迁移的本地常用分流
 # > 一些比较容易忽视的分流
-host, ad.12306.cn, direct
-host, sdkapp.uve.weibo.com, direct
 host-keyword, github, proxy
 
 # > local
