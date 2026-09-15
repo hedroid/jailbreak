@@ -45,3 +45,7 @@ DOMAIN-SUFFIX,stats.qiumibao.com
 
 # > dedao
 DOMAIN-SUFFIX,umiwi.com
+
+# > 自用修正：防广告规则误杀
+host, ad.12306.cn, direct
+host, sdkapp.uve.weibo.com, direct
