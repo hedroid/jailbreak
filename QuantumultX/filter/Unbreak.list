@@ -42,3 +42,6 @@ DOMAIN,msg.umeng.com
 DOMAIN,msg.umengcloud.com
 # > zhiboba
 DOMAIN-SUFFIX,stats.qiumibao.com
+
+# > dedao
+DOMAIN-SUFFIX,umiwi.com
