@@ -31,5 +31,6 @@ DOMAIN,msg.umeng.com
 DOMAIN,msg.umengcloud.com
 DOMAIN-SUFFIX,stats.qiumibao.com
 DOMAIN-SUFFIX,umiwi.com
-host, ad.12306.cn, direct
-host, sdkapp.uve.weibo.com, direct
+# > 自用修正：防广告规则误杀
+DOMAIN,ad.12306.cn
+DOMAIN,sdkapp.uve.weibo.com
