@@ -1,25 +1,28 @@
 # NAME: DoubanAds
-# DESC: 豆瓣开屏/信息流广告分流拦截（SNI 层 REJECT，不受证书固定影响）
+# DESC: 豆瓣开屏广告分流拦截（SNI 层 REJECT，不受证书固定影响）
 # DESC: 豆瓣 App 的 frodo.douban.com 有证书固定，MITM 不可用，重写层规则对它无效，必须在分流层整域拒绝
+# DESC: feed/剧照里的广告条目随 frodo 数据下发、拦不掉条目本身，第三方素材域被拒只会留空白占位，
+# DESC: 故素材/请求域默认放行（注释保留），只拦豆瓣自有开屏广告域
 # REF: https://cn.v2ex.com/t/970893 / fmz200 wool_scripts / NobyDa AdRule
 
-# > 豆瓣自有广告/上报域
+# > 豆瓣自有广告/上报域（开屏拦截主力）
 # 若豆瓣网页或 App 加载异常，删除 erebor 这行即可
 DOMAIN-SUFFIX,erebor.douban.com,REJECT
 DOMAIN-SUFFIX,ad.doubanio.com,REJECT
-DOMAIN,qnmob3.doubanio.com,REJECT
 
-# > 第三方广告供应商（优量汇/穿山甲/阿里tanx/京东DSP/抖音/火山）
-DOMAIN-SUFFIX,gdt.qq.com,REJECT
-DOMAIN,qzs.gdtimg.com,REJECT
-DOMAIN,pgdt.ugdtimg.com,REJECT
-DOMAIN,sdk.e.qq.com,REJECT
-DOMAIN,et.tanx.com,REJECT
-DOMAIN,sdk-config.tanx.com,REJECT
-DOMAIN,dsp-x.jd.com,REJECT
-DOMAIN,xlog.jd.com,REJECT
-DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao.com,REJECT
-DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao1.com,REJECT
-DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
-DOMAIN,webcast-open.douyin.com,REJECT
-DOMAIN,mssdk.volces.com,REJECT
+# > 以下第三方供应商域默认放行：拒了会造成 feed 空白占位（条目在、素材挂）
+# 若放开后开屏广告复现，再从上往下逐个恢复注释：
+# DOMAIN,qnmob3.doubanio.com,REJECT
+# DOMAIN-SUFFIX,gdt.qq.com,REJECT
+# DOMAIN,qzs.gdtimg.com,REJECT
+# DOMAIN,pgdt.ugdtimg.com,REJECT
+# DOMAIN,sdk.e.qq.com,REJECT
+# DOMAIN,et.tanx.com,REJECT
+# DOMAIN,sdk-config.tanx.com,REJECT
+# DOMAIN,dsp-x.jd.com,REJECT
+# DOMAIN,xlog.jd.com,REJECT
+# DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao.com,REJECT
+# DOMAIN-SUFFIX,api-access.pangolin-sdk-toutiao1.com,REJECT
+# DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+# DOMAIN,webcast-open.douyin.com,REJECT
+# DOMAIN,mssdk.volces.com,REJECT
