@@ -1,0 +1,59 @@
+# > Steam 分流（上游 blackmatrix7/ios_rule_script，2025-06；国区下载 CDN 拆出走直连）
+
+# > 商店/社区/API 走全球加速
+host, steambroadcast.akamaized.net, 全球加速
+host, steamcdn-a.akamaihd.net, 全球加速
+host, steamcommunity-a.akamaihd.net, 全球加速
+host, steammobile.akamaized.net, 全球加速
+host, steampipe.akamaized.net, 全球加速
+host, steamstore-a.akamaihd.net, 全球加速
+host, steamusercontent-a.akamaihd.net, 全球加速
+host, steamuserimages-a.akamaihd.net, 全球加速
+host-suffix, edge.steam-dns.top.comcast.net, 全球加速
+host-suffix, f3b7q2p3.ssl.hwcdn.net, 全球加速
+host-suffix, fanatical.com, 全球加速
+host-suffix, humblebundle.com, 全球加速
+host-suffix, playartifact.com, 全球加速
+host-suffix, s.team, 全球加速
+host-suffix, steam-api.com, 全球加速
+host-suffix, steam-chat.com, 全球加速
+host-suffix, steam.apac.qtlglb.com, 全球加速
+host-suffix, steam.cdn.on.net, 全球加速
+host-suffix, steam.cdn.orcon.net.nz, 全球加速
+host-suffix, steam.cdn.slingshot.co.nz, 全球加速
+host-suffix, steam.cdn.webra.ru, 全球加速
+host-suffix, steam.eca.qtlglb.com, 全球加速
+host-suffix, steam.naeu.qtlglb.com, 全球加速
+host-suffix, steam.ru.qtlglb.com, 全球加速
+host-suffix, steam.tv, 全球加速
+host-suffix, steamcommunity.com, 全球加速
+host-suffix, steamdeck.com, 全球加速
+host-suffix, steamgames.com, 全球加速
+host-suffix, steampipe-kr.akamaized.net, 全球加速
+host-suffix, steampipe-partner.akamaized.net, 全球加速
+host-suffix, steampowered.com, 全球加速
+host-suffix, steamstat.us, 全球加速
+host-suffix, steamstatic.com, 全球加速
+host-suffix, steamunlocked.net, 全球加速
+host-suffix, steamvideo-a.akamaihd.net, 全球加速
+host-suffix, underlords.com, 全球加速
+host-suffix, valvesoftware.com, 全球加速
+host-keyword, steambroadcast, 全球加速
+host-keyword, steamstore, 全球加速
+host-keyword, steamuserimages, 全球加速
+
+# > 国区下载 CDN 直连（保证下载速度）
+host-suffix, cdn-ali.content.steamchina.com, direct
+host-suffix, cdn-qc.content.steamchina.com, direct
+host-suffix, cdn-ws.content.steamchina.com, direct
+host-suffix, csgo.wmsj.cn, direct
+host-suffix, dl.steam.clngaa.com, direct
+host-suffix, dl.steam.ksyna.com, direct
+host-suffix, dota2.wmsj.cn, direct
+host-suffix, st.dl.bscstorage.net, direct
+host-suffix, st.dl.eccdnx.com, direct
+host-suffix, st.dl.pinyuncloud.com, direct
+host-suffix, steamcontent.tnkjmec.com, direct
+host-suffix, steampowered.com.8686c.com, direct
+host-suffix, steamstatic.com.8686c.com, direct
+host-suffix, wmsjsteam.com, direct
